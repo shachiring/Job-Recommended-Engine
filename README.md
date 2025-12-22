@@ -12,3 +12,28 @@ I built a Job Recommendation Engine in C++ that fixes the flaws of LinkedIn and 
 - **Unified Dashboard**: Aggregates jobs from multiple platforms
 
 ## 🏗️ Architecture
+## 🛠️ Tech Stack
+- **Language**: C++
+- **Build System**: Makefile
+- **Data Format**: CSV
+- **Modules**:
+  - `graph_engine.cpp`
+  - `trie_search.cpp`
+  - `heap_ranker.cpp`
+  - `dp_pathfinder.cpp`
+  - `freshness_filter.cpp`
+
+## 📂 Folder Structure
+## 🧪 How to Build and Run
+```bash
+make
+./job_recommendation_engine
+
+---
+
+Once you've pasted this into your `README.md`, run:
+
+```bash
+git add README.md
+git commit -m "Update README with full roadmap and features"
+git push
