@@ -1,0 +1,11 @@
+🚀 Job Recommendation Engine Started!
+
+Recommended Jobs:
+- ML Engineer
+- Data Engineer
+- Backend Developer
+
+Career Path to ML Engineer:
+Python -> NumPy -> TensorFlow -> ML Engineer -> Done
+
+✅ HeapRanker tests passed!

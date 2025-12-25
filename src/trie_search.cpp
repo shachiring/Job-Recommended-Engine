@@ -1,4 +1,5 @@
 #include "trie_search.h"
+#include <functional>  // ✅ Required for std::function and lambdas
 
 void TrieSearch::insert(const std::string& word) {
     TrieNode* node = root;
@@ -17,11 +18,16 @@ std::vector<std::string> TrieSearch::autocomplete(const std::string& prefix) {
         if (!node->children[c]) return results;
         node = node->children[c];
     }
+
     std::function<void(TrieNode*, std::string)> dfs = [&](TrieNode* n, std::string path) {
-        if (n->isEnd) results.push_back(path);
-        for (auto& [ch, child] : n->children)
-            dfs(child, path + ch);
+    if (n->isEnd) results.push_back(path);
+    for (auto& pair : n->children) {
+        char ch = pair.first;
+        TrieNode* child = pair.second;
+        dfs(child, path + ch);
+      }
     };
+
     dfs(node, prefix);
     return results;
 }

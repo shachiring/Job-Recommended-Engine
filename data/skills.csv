@@ -1,0 +1,4 @@
+skill,category,prerequisite
+C++,Programming,
+Python,Programming,
+TensorFlow,Machine Learning,Python

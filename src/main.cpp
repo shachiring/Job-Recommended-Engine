@@ -14,7 +14,30 @@ int main() {
     DPPathfinder dp;
     FreshnessFilter filter;
 
-    // TODO: Load data and run recommendation pipeline
+    
+    trie.insert("Backend Developer");
+    trie.insert("Data Engineer");
+    trie.insert("ML Engineer");
+
+    
+    heap.addJob("Backend Developer", 85);
+    heap.addJob("Data Engineer", 90);
+    heap.addJob("ML Engineer", 95);
+
+    
+    auto topJobs = heap.getTopJobs(3);
+    std::cout << "Recommended Jobs:" << std::endl;
+    for (auto& job : topJobs) {
+        std::cout << "- " << job << std::endl;
+    }
+
+    
+    auto path = dp.findCareerPath("Python", "ML Engineer");
+    std::cout << "\nCareer Path to ML Engineer:" << std::endl;
+    for (auto& step : path) {
+        std::cout << step << " -> ";
+    }
+    std::cout << "Done" << std::endl;
 
     return 0;
 }
