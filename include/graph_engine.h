@@ -1,14 +1,17 @@
 #ifndef GRAPH_ENGINE_H
 #define GRAPH_ENGINE_H
 
-#include <vector>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 class GraphEngine {
 public:
-    void addSkillRelation(const std::string& skill, const std::string& job);
-    std::vector<std::string> recommendJobs(const std::string& skill);
+    void addEdge(const std::string& from, const std::string& to);
+    std::vector<std::string> getNeighbors(const std::string& node);
+
+private:
+    std::unordered_map<std::string, std::vector<std::string>> adjList;
 };
 
 #endif

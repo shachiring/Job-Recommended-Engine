@@ -3,11 +3,15 @@
 
 #include <string>
 #include <vector>
-#include <ctime>
+#include <unordered_map>
 
 class FreshnessFilter {
 public:
-    bool isFresh(const std::time_t& postedDate);
+    void addJob(const std::string& title, const std::string& date);
+    std::vector<std::string> getRecentJobs(const std::string& cutoffDate);
+
+private:
+    std::unordered_map<std::string, std::string> jobDates;
 };
 
 #endif
